@@ -41,7 +41,7 @@ function getTotalSold(inventory) {
 	for (let i = 5; i < inventory.length; i++) {
 		let delta = 0;
 		if (inventory[i - 1] != "" && inventory[i] != "") {
-			delta = pareseInt(inventory[i - 1]) - pareseInt(inventory[i]);
+			delta = parseInt(inventory[i - 1]) - parseInt(inventory[i]);
 		}
 
 		// Positive delta means the inventroy decreased -> items sold
