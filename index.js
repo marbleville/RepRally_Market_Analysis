@@ -27,7 +27,11 @@ fs.createReadStream("./inventory.csv")
 		console.log(error.message);
 	})
 	.on("end", function () {
-		console.log("finished");
+		for (let i = 0; i < topNumber; i++) {
+			console.log(
+				`Product: ${sortedProducts[i].name} - Quantity Sold: ${sortedProducts[i].quantitySold}`
+			);
+		}
 	});
 
 function getTotalSold(inventory) {
