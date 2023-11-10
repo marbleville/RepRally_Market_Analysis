@@ -1,0 +1,23 @@
+{
+  "name": "reprally_market_analysis",
+  "version": "1.0.0",
+  "description": "Your objective is to identify the top 20 performing products and offer insightful answers to the following questions:",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/marbleville/RepRally_Market_Analysis.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/marbleville/RepRally_Market_Analysis/issues"
+  },
+  "homepage": "https://github.com/marbleville/RepRally_Market_Analysis#readme",
+  "dependencies": {
+    "csv-parse": "^5.5.2"
+  }
+}
