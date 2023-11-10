@@ -1,5 +1,6 @@
 const fs = require("fs");
 const { parse } = require("csv-parse");
+const topNumber = 20;
 
 let productObj = {
 	id: "",
