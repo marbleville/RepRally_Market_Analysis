@@ -14,7 +14,13 @@ let sortedProducts = [];
 fs.createReadStream("./inventory.csv")
 	.pipe(parse({ delimiter: ",", from_line: 2 }))
 	.on("data", function (row) {
-		console.log(row);
+		let o = Object.create(productObj);
+		o.id = row[0];
+		o.name = row[1];
+		o.category = row[2];
+		o.brandId = row[3];
+		o.quantitySold = getTotalSold(row);
+		insertProduct(o);
 	})
 	.on("error", function (error) {
 		console.log(error.message);
