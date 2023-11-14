@@ -2,6 +2,9 @@ const fs = require("fs");
 const { parse } = require("csv-parse");
 const topNumber = 20;
 
+// Max delta threshhold to filter erroneous data entries
+const threshold = 1000 * 100; // 100,000
+
 let productObj = {
 	id: "",
 	name: "",
@@ -43,11 +46,12 @@ function getTotalSold(inventory) {
 		let prev = parseInt(inventory[i - 1]);
 		let cur = parseInt(inventory[i]);
 
-		if (prev != NaN && cur != NaN) {
+		if (prev !== NaN && cur !== NaN) {
 			let delta = prev - cur;
+			// If this delta is more than 3 orders of magnintude larger, ignore it
 
 			// Positive delta means the inventory decreased -> items sold
-			if (delta > 0) {
+			if (delta > 0 && delta < threshold) {
 				total += delta;
 			}
 		}
