@@ -33,6 +33,7 @@ fs.createReadStream("./inventory.csv")
 		console.log(error.message);
 	})
 	.on("end", function () {
+		console.log("Top 20 products by quantity sold:");
 		for (let i = 0; i < topNumber; i++) {
 			console.log(sortedProducts[i]);
 		}
